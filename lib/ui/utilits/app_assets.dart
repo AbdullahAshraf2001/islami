@@ -6,4 +6,5 @@ abstract class AppAssets {
   static const background = "assets/images/bg3.png";
   static const Ahadeth =
       "assets/images/59253-quran-basmala-islamic-kufic-arabic-calligraphy-icon.png";
+  static const icQuranTab = "assets/images/icQuranTab.png";
 }
