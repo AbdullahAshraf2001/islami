@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami/model/details_screen_args.dart';
 import 'package:islami/ui/screens/details_screen/detailsScreen.dart';
 import 'package:islami/ui/utilits/app_assets.dart';
-import 'package:islami/ui/utilits/app_colors.dart';
-import 'package:islami/ui/utilits/app_theme.dart';
 import 'package:islami/ui/utilits/constants.dart';
 
 class QuranTab extends StatelessWidget {
@@ -13,19 +12,13 @@ class QuranTab extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Expanded(flex: 3, child: Image.asset(AppAssets.icQuranTab)),
-        const Divider(
-          thickness: 3,
-          color: AppColors.primiary,
-        ),
-        const Text(
-          "Sura name",
-          style: AppTheme.QuranTabTitleTextStyle,
+        const Divider(),
+        Text(
+          AppLocalizations.of(context)!.suraName,
+          style: Theme.of(context).textTheme.displayMedium,
           textAlign: TextAlign.center,
         ),
-        const Divider(
-          thickness: 3,
-          color: AppColors.primiary,
-        ),
+        const Divider(),
         Expanded(
           flex: 7,
           child: ListView.builder(
@@ -41,8 +34,10 @@ class QuranTab extends StatelessWidget {
                     },
                     child: Text(
                       Constants.suraNames[index],
-                      style: AppTheme.QuranTabTitleTextStyle.copyWith(
-                          fontWeight: FontWeight.normal),
+                      style: Theme.of(context)
+                          .textTheme
+                          .displayMedium
+                          ?.copyWith(fontWeight: FontWeight.normal),
                       textAlign: TextAlign.center,
                     ));
               }),

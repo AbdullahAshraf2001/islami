@@ -7,4 +7,7 @@ abstract class AppAssets {
   static const Ahadeth =
       "assets/images/59253-quran-basmala-islamic-kufic-arabic-calligraphy-icon.png";
   static const icQuranTab = "assets/images/icQuranTab.png";
+  static const backgroundDark = "assets/images/bg_dark.png";
+  static const bodyOfSebha = "assets/images/body_of_seb7a.png";
+  static const headOfSebha = "assets/images/head_of_seb7a.png";
 }

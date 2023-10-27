@@ -8,6 +8,8 @@ import 'package:islami/ui/utilits/app_theme.dart';
 class DetailsScreen extends StatefulWidget {
   static const String routeName = "detailsScreen";
 
+  const DetailsScreen({super.key});
+
   @override
   State<DetailsScreen> createState() => _DetailsScreenState();
 }
@@ -28,6 +30,10 @@ class _DetailsScreenState extends State<DetailsScreen> {
       child: Scaffold(
         backgroundColor: AppColors.transparent,
         appBar: AppBar(
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back, color: Colors.black),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
           elevation: 0,
           backgroundColor: AppColors.transparent,
           centerTitle: true,
@@ -45,7 +51,8 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     fileContent,
                     textAlign: TextAlign.center,
                     textDirection: TextDirection.rtl,
-                    style: TextStyle(fontSize: 24, color: AppColors.accent),
+                    style:
+                        const TextStyle(fontSize: 24, color: AppColors.accent),
                   ),
                 ),
               ),

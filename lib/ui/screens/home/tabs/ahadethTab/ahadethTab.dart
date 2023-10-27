@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami/model/details_screen_args.dart';
 import 'package:islami/ui/screens/details_screen/detailsScreen.dart';
 import 'package:islami/ui/utilits/app_assets.dart';
-import 'package:islami/ui/utilits/app_colors.dart';
-import 'package:islami/ui/utilits/app_theme.dart';
 
 class AhadethTab extends StatelessWidget {
   List<String> ahadethNames = List.generate(50, (index) {
@@ -16,19 +15,13 @@ class AhadethTab extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Expanded(flex: 3, child: Image.asset(AppAssets.Ahadeth)),
-        const Divider(
-          thickness: 3,
-          color: AppColors.primiary,
-        ),
-        const Text(
-          "Hadeth name",
-          style: AppTheme.QuranTabTitleTextStyle,
+        const Divider(),
+        Text(
+          AppLocalizations.of(context)!.ahadesname,
+          style: Theme.of(context).textTheme.displayMedium,
           textAlign: TextAlign.center,
         ),
-        const Divider(
-          thickness: 3,
-          color: AppColors.primiary,
-        ),
+        const Divider(),
         Expanded(
           flex: 7,
           child: ListView.builder(
@@ -44,8 +37,10 @@ class AhadethTab extends StatelessWidget {
                     },
                     child: Text(
                       ahadethNames[index],
-                      style: AppTheme.QuranTabTitleTextStyle.copyWith(
-                          fontWeight: FontWeight.normal),
+                      style: Theme.of(context)
+                          .textTheme
+                          .displayMedium
+                          ?.copyWith(fontWeight: FontWeight.normal),
                       textAlign: TextAlign.center,
                     ));
               }),
